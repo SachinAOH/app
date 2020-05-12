@@ -2,7 +2,7 @@
 {
   "short_name" : "Auraiya Online",
   "description" : "www.auraiya.online",
-  "start_url" : "https://host.auraiya.online/",
+  "start_url" : "https://app.auraiya.online/",
   "name" : "Auraiya Online",
   "scope" : "https://app.auraiya.online",
   "display" : "standalone",
