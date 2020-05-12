@@ -128,6 +128,44 @@ html, body{
 </head>
 
 <body>
+  
+  
+  
+  <ul>
+				<li onClick="loadHomepage()">Home</li>
+				<li onClick="loadServices()">Services</li>
+			</ul>
+
+		<div id="main-content">[Text will update here!]home</div>
+		<div class="content">
+			<div class="text">
+			</div>
+		</div>
+  
+  
+		<script>
+			// DEFAULT CONTENT
+			var DOMAIN_NAME = 'https://app.auraiya.online';
+			
+			var html_home = '<h1>HOME PAGE</h1>';
+			html_home += '<h3>Add content home page here!</h3>';\
+			
+			var html_product = '<h1>PRODUCTS PAGE</h1>';
+			html_product += '<h3>Add content Products page here!</h3>';
+			
+			function loadHomepage() {
+				history.pushState({},"",DOMAIN_NAME + "/index");
+				document.getElementById('main-content').innerHTML = html_index;
+			}
+			function loadServices() {
+				history.pushState({},"",DOMAIN_NAME + "/services");
+				document.getElementById('main-content').innerHTML = html_services;
+			}
+		</script>
+  
+  
+  
+  
 
 <div class="categories">
 
@@ -180,30 +218,5 @@ html, body{
 
 
 
-<script>
-function load(thediv, thefile) /* 2 parameters passed into here: the id of the div container and the name of the page to go to */
-{   
-    if (window.XMLHttpRequest)
-    {
-        xmlhttp = new XMLHttpRequest(); 
-    }
-    else
-    {
-        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');   
-    }
-     
-    xmlhttp.onreadystatechange = function()
-    {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-        {
-            document.getElementById( thediv ).innerHTML = xmlhttp.responseText; 
-        }
-    }   
- 
-    xmlhttp.open('GET', thefile, true);
-    xmlhttp.send();
-         
-}
-</script>
 </body>
 </html>
