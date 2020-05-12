@@ -4,7 +4,7 @@
   "description" : "www.auraiya.online",
   "start_url" : "https://host.auraiya.online/",
   "name" : "Auraiya Online",
-  "scope" : "https://host.auraiya.online",
+  "scope" : "https://app.auraiya.online",
   "display" : "standalone",
   "orientation" : "portrait",
     "theme_color": "#3367D6",
