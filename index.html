@@ -13,6 +13,7 @@
 html, body{
   width: 600px;
   margin: auto;
+	border: 1px solid #f6f6f6;
 }
 
 .categories{
@@ -131,40 +132,6 @@ html, body{
   
   
   
-  <ul>
-				<li onClick="loadHomepage()">Home</li>
-				<li onClick="loadServices()">Services</li>
-			</ul>
-
-		<div id="main-content">[Text will update here!]home</div>
-		<div class="content">
-			<div class="text">
-			</div>
-		</div>
-  
-  
-		<script>
-			// DEFAULT CONTENT
-			var DOMAIN_NAME = 'https://app.auraiya.online';
-			
-			var html_home = '<h1>HOME PAGE</h1>';
-			html_home += '<h3>Add content home page here!</h3>';\
-			
-			var html_product = '<h1>PRODUCTS PAGE</h1>';
-			html_product += '<h3>Add content Products page here!</h3>';
-			
-			function loadHomepage() {
-				history.pushState({},"",DOMAIN_NAME + "/index");
-				document.getElementById('main-content').innerHTML = html_index;
-			}
-			function loadServices() {
-				history.pushState({},"",DOMAIN_NAME + "/services");
-				document.getElementById('main-content').innerHTML = html_services;
-			}
-		</script>
-  
-  
-  
   
 
 <div class="categories">
@@ -207,12 +174,25 @@ html, body{
 <center>
     <div class="drawer">
       
-        <span onClick="load('content', 'index.html');"><i class="fal fa-home"></i></span>
-        <span onClick="load('content', 'services.html');"><i class="fal fa-tools"></i> </span>
+	    <a href="https://app.auraiya.online/index.html">
+        <span><i class="fal fa-home"></i></span>
+	    </a>
+	    
+	    	    <a href="https://app.auraiya.online/services.html">
+        <span><i class="fal fa-tools"></i> </span>
+	    </a>
+	    
+	    
         <div class="menu-btn"><i class="fas fa-comments"></i></div>
         <span><!-- space icon --></span>
-        <span onClick="load('content', 'public.html');"><i class="fal fa-chart-bar"></i></span>
-        <span onClick="load('content', 'admin.html');"><i class="fal fa-sticky-note"></i> </span>
+	    
+	    	    <a href="https://app.auraiya.online/public.html">
+        <span><i class="fal fa-chart-bar"></i></span>
+	    </a>
+	    
+	    	    <a href="https://app.auraiya.online/admin.html">
+        <span><i class="fal fa-sticky-note"></i> </span>
+	    </a>
       </div>
 </center>
 
