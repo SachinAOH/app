@@ -11,9 +11,19 @@
 
 <style>
 html, body{
-  width: 600px;
+  width: 480px;
   margin: auto;
 }
+	
+	
+	  .mobileShow { display: none;}
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){ 
+      .mobileShow {display: inline;}
+  }
+	
+	
 
 .categories{
  border: 1px solid #f6f6f6; 
@@ -65,7 +75,7 @@ html, body{
   height:80px;
   position: fixed;
   bottom: 0px;
-  width: 600px;
+  width: 480px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   z-index: 5;
@@ -127,7 +137,7 @@ html, body{
 </style>
 </head>
 
-<body>
+<body class="mobileshow">
   
   
   
