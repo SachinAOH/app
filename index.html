@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title>AOH</title>
+<title>Auraiya Online</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.7.0/css/all.css'>
+	<link rel="manifest" href="manifest.json">
 
 <style>
 ::-webkit-scrollbar {
@@ -288,35 +289,54 @@ border-bottom: 1px solid #bbb;
 </div>
 </div>
 
+<script type="text/javascript">
+	if ('serviceWorker' in navigator) {
+	  window.addEventListener('load', function() {
+	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+	      // Registration was successful
+	      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+	    }, function(err) {
+	      // registration failed :(
+	      console.log('ServiceWorker registration failed: ', err);
+	    });
+	  });
+	}
+
+	let deferredPrompt;
+	var div = document.querySelector('.add-to');
+	var button = document.querySelector('.add-to-btn');
+	div.style.display = 'none';
+
+	window.addEventListener('beforeinstallprompt', (e) => {
+	  // Prevent Chrome 67 and earlier from automatically showing the prompt
+	  e.preventDefault();
+	  // Stash the event so it can be triggered later.
+	  deferredPrompt = e;
+	  div.style.display = 'block';
+
+	  button.addEventListener('click', (e) => {
+	  // hide our user interface that shows our A2HS button
+	  div.style.display = 'none';
+	  // Show the prompt
+	  deferredPrompt.prompt();
+	  // Wait for the user to respond to the prompt
+	  deferredPrompt.userChoice
+	    .then((choiceResult) => {
+	      if (choiceResult.outcome === 'accepted') {
+	        console.log('User accepted the A2HS prompt');
+	      } else {
+	        console.log('User dismissed the A2HS prompt');
+	      }
+	      deferredPrompt = null;
+	    });
+	});
+	});
+
+</script>
 
 
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("app-card");
-  var dots = document.getElementsByClassName("nav");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active-tab", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active-tab";
-}
+var _0x1eea=['getElementsByClassName','style','nav','display','\x20active-tab','className','length'];(function(_0x3e37e1,_0x1eeafb){var _0x571a46=function(_0x2ddc7f){while(--_0x2ddc7f){_0x3e37e1['push'](_0x3e37e1['shift']());}};_0x571a46(++_0x1eeafb);}(_0x1eea,0x169));var _0x571a=function(_0x3e37e1,_0x1eeafb){_0x3e37e1=_0x3e37e1-0x0;var _0x571a46=_0x1eea[_0x3e37e1];return _0x571a46;};var slideIndex=0x1;showDivs(slideIndex);function plusDivs(_0x14621f){showDivs(slideIndex+=_0x14621f);}function currentDiv(_0x15c529){showDivs(slideIndex=_0x15c529);}function showDivs(_0x3ad018){var _0x29a38e;var _0x19064c=document[_0x571a('0x3')]('app-card');var _0x47c749=document[_0x571a('0x3')](_0x571a('0x5'));if(_0x3ad018>_0x19064c[_0x571a('0x2')]){slideIndex=0x1;}if(_0x3ad018<0x1){slideIndex=_0x19064c[_0x571a('0x2')];}for(_0x29a38e=0x0;_0x29a38e<_0x19064c[_0x571a('0x2')];_0x29a38e++){_0x19064c[_0x29a38e][_0x571a('0x4')][_0x571a('0x6')]='none';}for(_0x29a38e=0x0;_0x29a38e<_0x47c749[_0x571a('0x2')];_0x29a38e++){_0x47c749[_0x29a38e][_0x571a('0x1')]=_0x47c749[_0x29a38e][_0x571a('0x1')]['replace'](_0x571a('0x0'),'');}_0x19064c[slideIndex-0x1][_0x571a('0x4')][_0x571a('0x6')]='block';_0x47c749[slideIndex-0x1][_0x571a('0x1')]+=_0x571a('0x0');}
 </script>
 
 </body>
