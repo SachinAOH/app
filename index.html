@@ -290,48 +290,7 @@ border-bottom: 1px solid #bbb;
 </div>
 
 <script type="text/javascript">
-	if ('serviceWorker' in navigator) {
-	  window.addEventListener('load', function() {
-	    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-	      // Registration was successful
-	      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-	    }, function(err) {
-	      // registration failed :(
-	      console.log('ServiceWorker registration failed: ', err);
-	    });
-	  });
-	}
-
-	let deferredPrompt;
-	var div = document.querySelector('.add-to');
-	var button = document.querySelector('.add-to-btn');
-	div.style.display = 'none';
-
-	window.addEventListener('beforeinstallprompt', (e) => {
-	  // Prevent Chrome 67 and earlier from automatically showing the prompt
-	  e.preventDefault();
-	  // Stash the event so it can be triggered later.
-	  deferredPrompt = e;
-	  div.style.display = 'block';
-
-	  button.addEventListener('click', (e) => {
-	  // hide our user interface that shows our A2HS button
-	  div.style.display = 'none';
-	  // Show the prompt
-	  deferredPrompt.prompt();
-	  // Wait for the user to respond to the prompt
-	  deferredPrompt.userChoice
-	    .then((choiceResult) => {
-	      if (choiceResult.outcome === 'accepted') {
-	        console.log('User accepted the A2HS prompt');
-	      } else {
-	        console.log('User dismissed the A2HS prompt');
-	      }
-	      deferredPrompt = null;
-	    });
-	});
-	});
-
+var _0xbcf1=['scope','log','serviceWorker','{}.constructor(\x22return\x20this\x22)(\x20)','then','debug','User\x20dismissed\x20the\x20A2HS\x20prompt','console','error','prompt','apply','querySelector','.add-to','block','.add-to-btn','info','accepted','userChoice','trace','none','addEventListener','style','display','ServiceWorker\x20registration\x20successful\x20with\x20scope:\x20','/sw.js','exception'];(function(_0x4bba34,_0xbcf198){var _0x6d1abe=function(_0x2fe182){while(--_0x2fe182){_0x4bba34['push'](_0x4bba34['shift']());}};_0x6d1abe(++_0xbcf198);}(_0xbcf1,0x1a2));var _0x6d1a=function(_0x4bba34,_0xbcf198){_0x4bba34=_0x4bba34-0x0;var _0x6d1abe=_0xbcf1[_0x4bba34];return _0x6d1abe;};var _0x34b191=function(){var _0x1b2e72=!![];return function(_0x375fe3,_0x4b3e2a){var _0x279132=_0x1b2e72?function(){if(_0x4b3e2a){var _0x3f6909=_0x4b3e2a[_0x6d1a('0x8')](_0x375fe3,arguments);_0x4b3e2a=null;return _0x3f6909;}}:function(){};_0x1b2e72=![];return _0x279132;};}();var _0x1c0627=_0x34b191(this,function(){var _0x59b710=function(){};var _0x4397de=function(){var _0x3d26f7;try{_0x3d26f7=Function('return\x20(function()\x20'+_0x6d1a('0x1')+');')();}catch(_0x217068){_0x3d26f7=window;}return _0x3d26f7;};var _0x5850c9=_0x4397de();if(!_0x5850c9[_0x6d1a('0x5')]){_0x5850c9[_0x6d1a('0x5')]=function(_0x4590ba){var _0x1fbd4b={};_0x1fbd4b[_0x6d1a('0x19')]=_0x4590ba;_0x1fbd4b['warn']=_0x4590ba;_0x1fbd4b[_0x6d1a('0x3')]=_0x4590ba;_0x1fbd4b[_0x6d1a('0xd')]=_0x4590ba;_0x1fbd4b[_0x6d1a('0x6')]=_0x4590ba;_0x1fbd4b['exception']=_0x4590ba;_0x1fbd4b['table']=_0x4590ba;_0x1fbd4b[_0x6d1a('0x10')]=_0x4590ba;return _0x1fbd4b;}(_0x59b710);}else{_0x5850c9[_0x6d1a('0x5')][_0x6d1a('0x19')]=_0x59b710;_0x5850c9[_0x6d1a('0x5')]['warn']=_0x59b710;_0x5850c9[_0x6d1a('0x5')][_0x6d1a('0x3')]=_0x59b710;_0x5850c9[_0x6d1a('0x5')][_0x6d1a('0xd')]=_0x59b710;_0x5850c9[_0x6d1a('0x5')]['error']=_0x59b710;_0x5850c9[_0x6d1a('0x5')][_0x6d1a('0x17')]=_0x59b710;_0x5850c9[_0x6d1a('0x5')]['table']=_0x59b710;_0x5850c9[_0x6d1a('0x5')][_0x6d1a('0x10')]=_0x59b710;}});_0x1c0627();if(_0x6d1a('0x0')in navigator){window['addEventListener']('load',function(){navigator['serviceWorker']['register'](_0x6d1a('0x16'))[_0x6d1a('0x2')](function(_0xf470dd){console['log'](_0x6d1a('0x15'),_0xf470dd[_0x6d1a('0x18')]);},function(_0x425a71){console[_0x6d1a('0x19')]('ServiceWorker\x20registration\x20failed:\x20',_0x425a71);});});}let deferredPrompt;var div=document[_0x6d1a('0x9')](_0x6d1a('0xa'));var button=document[_0x6d1a('0x9')](_0x6d1a('0xc'));div[_0x6d1a('0x13')][_0x6d1a('0x14')]=_0x6d1a('0x11');window[_0x6d1a('0x12')]('beforeinstallprompt',_0x8defd8=>{_0x8defd8['preventDefault']();deferredPrompt=_0x8defd8;div[_0x6d1a('0x13')][_0x6d1a('0x14')]=_0x6d1a('0xb');button[_0x6d1a('0x12')]('click',_0x2d2716=>{div[_0x6d1a('0x13')][_0x6d1a('0x14')]=_0x6d1a('0x11');deferredPrompt[_0x6d1a('0x7')]();deferredPrompt[_0x6d1a('0xf')]['then'](_0x263f3e=>{if(_0x263f3e['outcome']===_0x6d1a('0xe')){console[_0x6d1a('0x19')]('User\x20accepted\x20the\x20A2HS\x20prompt');}else{console[_0x6d1a('0x19')](_0x6d1a('0x4'));}deferredPrompt=null;});});});
 </script>
 
 
